@@ -1,4 +1,4 @@
-## This file is a general .xdc for the ARTY Rev. B
+## This file is a general .xdc for the Arty S7-50 Rev. B
 ## To use it in a project:
 ## - uncomment the lines corresponding to used pins
 ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
@@ -185,15 +185,24 @@
 
 
 ## Quad SPI Flash
+## Note: the SCK clock signal can be driven using the STARTUPE2 primitive
 #set_property -dict { PACKAGE_PIN M13   IOSTANDARD LVCMOS33 } [get_ports { qspi_cs }]; #IO_L6P_T0_FCS_B_14 Sch=qspi_cs
 #set_property -dict { PACKAGE_PIN K17   IOSTANDARD LVCMOS33 } [get_ports { qspi_dq[0] }]; #IO_L1P_T0_D00_MOSI_14 Sch=qspi_dq[0]
 #set_property -dict { PACKAGE_PIN K18   IOSTANDARD LVCMOS33 } [get_ports { qspi_dq[1] }]; #IO_L1N_T0_D01_DIN_14 Sch=qspi_dq[1]
 #set_property -dict { PACKAGE_PIN L14   IOSTANDARD LVCMOS33 } [get_ports { qspi_dq[2] }]; #IO_L2P_T0_D02_14 Sch=qspi_dq[2]
 #set_property -dict { PACKAGE_PIN M15   IOSTANDARD LVCMOS33 } [get_ports { qspi_dq[3] }]; #IO_L2N_T0_D03_14 Sch=qspi_dq[3]
 
-##Configuration options, can be used for all designs
+## Configuration options, can be used for all designs
 set_property BITSTREAM.CONFIG.CONFIGRATE 50 [current_design]
 set_property CONFIG_VOLTAGE 3.3 [current_design]
 set_property CFGBVS VCCO [current_design]
 set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
 set_property CONFIG_MODE SPIx4 [current_design]
+
+## SW3 is assigned to a pin M5 in the 1.35v bank. This pin can also be used as
+## the VREF for BANK 34. To ensure that SW3 does not define the reference voltage
+## and to be able to use this pin as an ordinary I/O the following property must
+## be set to enable an internal VREF for BANK 34. Since a 1.35v supply is being
+## used the internal reference is set to half that value (i.e. 0.675v). Note that
+## this property must be set even if SW3 is not used in the design.
+set_property INTERNAL_VREF 0.675 [get_iobanks 34]
