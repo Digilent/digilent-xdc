@@ -128,12 +128,12 @@
 ##ChipKit Digital I/O On Inner Analog Header
 ##NOTE: These pins will need to be connected to the XADC core when used as differential analog inputs (Chipkit analog pins A6-A11)
 
-set_property -dict { PACKAGE_PIN B20   IOSTANDARD LVCMOS33 } [get_ports { ad_n[0] }]; #IO_L1N_T0_AD0N_35 Sch=AD0_N
-set_property -dict { PACKAGE_PIN C20   IOSTANDARD LVCMOS33 } [get_ports { ad_p[0] }]; #IO_L1P_T0_AD0P_35 Sch=AD0_P
-set_property -dict { PACKAGE_PIN F20   IOSTANDARD LVCMOS33 } [get_ports { ad_n[12] }]; #IO_L15N_T2_DQS_AD12N_35 Sch=AD12_N
-set_property -dict { PACKAGE_PIN F19   IOSTANDARD LVCMOS33 } [get_ports { ad_p[12] }]; #IO_L15P_T2_DQS_AD12P_35 Sch=AD12_P
-set_property -dict { PACKAGE_PIN A20   IOSTANDARD LVCMOS33 } [get_ports { ad_n[8] }]; #IO_L2N_T0_AD8N_35 Sch=AD8_N
-set_property -dict { PACKAGE_PIN B19   IOSTANDARD LVCMOS33 } [get_ports { ad_p[8] }]; #IO_L2P_T0_AD8P_35 Sch=AD8_P
+#set_property -dict { PACKAGE_PIN B20   IOSTANDARD LVCMOS33 } [get_ports { ad_n[0] }]; #IO_L1N_T0_AD0N_35 Sch=AD0_N
+#set_property -dict { PACKAGE_PIN C20   IOSTANDARD LVCMOS33 } [get_ports { ad_p[0] }]; #IO_L1P_T0_AD0P_35 Sch=AD0_P
+#set_property -dict { PACKAGE_PIN F20   IOSTANDARD LVCMOS33 } [get_ports { ad_n[12] }]; #IO_L15N_T2_DQS_AD12N_35 Sch=AD12_N
+#set_property -dict { PACKAGE_PIN F19   IOSTANDARD LVCMOS33 } [get_ports { ad_p[12] }]; #IO_L15P_T2_DQS_AD12P_35 Sch=AD12_P
+#set_property -dict { PACKAGE_PIN A20   IOSTANDARD LVCMOS33 } [get_ports { ad_n[8] }]; #IO_L2N_T0_AD8N_35 Sch=AD8_N
+#set_property -dict { PACKAGE_PIN B19   IOSTANDARD LVCMOS33 } [get_ports { ad_p[8] }]; #IO_L2P_T0_AD8P_35 Sch=AD8_P
 
 ##ChipKit Digital I/O Low
 
