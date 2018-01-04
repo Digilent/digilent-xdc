@@ -4,8 +4,8 @@
 ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
 
 ## Clock Signal
-#set_property -dict { PACKAGE_PIN AD12  IOSTANDARD LVDS     } [get_ports { fpga_sysclk_p }]; #IO_L12P_T1_MRCC_33 Sch=fpga_sysclk_p
-#set_property -dict { PACKAGE_PIN AD11  IOSTANDARD LVDS     } [get_ports { fpga_sysclk_n }]; #IO_L12N_T1_MRCC_33 Sch=fpga_sysclk_n
+#set_property -dict { PACKAGE_PIN AD12  IOSTANDARD LVDS     } [get_ports { clk_p }]; #IO_L12P_T1_MRCC_33 Sch=fpga_sysclk_p
+#set_property -dict { PACKAGE_PIN AD11  IOSTANDARD LVDS     } [get_ports { clk_n }]; #IO_L12N_T1_MRCC_33 Sch=fpga_sysclk_n
 #create_clock -add -name sys_clk_pin -period 5.00 -waveform {0 2.5} [get_ports clk_p]
 
 ## Switches
