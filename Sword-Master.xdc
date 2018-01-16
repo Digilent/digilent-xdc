@@ -8,6 +8,9 @@
 #set_property -dict { PACKAGE_PIN AD11  IOSTANDARD LVDS     } [get_ports { clk_n }]; #IO_L12N_T1_MRCC_33 Sch=fpga_sysclk_n
 #create_clock -add -name sys_clk_pin -period 5.00 -waveform {0 2.5} [get_ports clk_p]
 
+## User Reset Button
+#set_property -dict { PACKAGE_PIN Y13   IOSTANDARD LVCMOS15 } [get_ports { rst }]; #IO_0_VRN_33 Sch=user_rst
+
 ## Switches
 #set_property -dict { PACKAGE_PIN AG19  IOSTANDARD LVCMOS18 } [get_ports { sw[0] }];  #IO_L8P_T1_32      Sch=sw[0]
 #set_property -dict { PACKAGE_PIN AH19  IOSTANDARD LVCMOS18 } [get_ports { sw[1] }];  #IO_L8N_T1_32      Sch=sw[1]
@@ -242,7 +245,6 @@
 #set_property -dict { PACKAGE_PIN AD13  IOSTANDARD LVCMOS15 } [get_ports { usbh_rst }]; #IO_25_VRP_33 Sch=usbh_rst
 #set_property -dict { PACKAGE_PIN C15   IOSTANDARD LVCMOS33 } [get_ports { usbh_sclk }]; #IO_L23P_T3_18 Sch=usbh_sclk
 #set_property -dict { PACKAGE_PIN B15   IOSTANDARD LVCMOS33 } [get_ports { usbh_ss }]; #IO_L23N_T3_18 Sch=usbh_ss
-#set_property -dict { PACKAGE_PIN Y13   IOSTANDARD LVCMOS15 } [get_ports { user_rst }]; #IO_0_VRN_33 Sch=user_rst
 
 ## RS232 Connector
 #set_property -dict { PACKAGE_PIN D11   IOSTANDARD LVCMOS33 } [get_ports { rs232_rxd }]; #IO_L18P_T2_18 Sch=uart1_rxd
