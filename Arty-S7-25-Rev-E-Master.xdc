@@ -1,4 +1,4 @@
-## This file is a general .xdc for the Arty S7-50 Rev. B
+## This file is a general .xdc for the Arty S7-25 Rev. E
 ## To use it in a project:
 ## - uncomment the lines corresponding to used pins
 ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
@@ -91,22 +91,23 @@
 ## ChipKit Single Ended Analog Inputs
 ## NOTE: The ck_an_p pins can be used as single ended analog inputs with voltages from 0-3.3V (Chipkit Analog pins A0-A5). 
 ## These signals should only be connected to the XADC core. When using these pins as digital I/O, use pins ck_io[14-19].
-#set_property -dict { PACKAGE_PIN B13   IOSTANDARD LVCMOS33 } [get_ports { Vaux0_v_p }]; #IO_L1P_T0_AD0P_15 Sch=ck_an_p[0]
-#set_property -dict { PACKAGE_PIN A13   IOSTANDARD LVCMOS33 } [get_ports { Vaux0_v_n }]; #IO_L1N_T0_AD0N_15 Sch=ck_an_n[0]
-#set_property -dict { PACKAGE_PIN B15   IOSTANDARD LVCMOS33 } [get_ports { Vaux1_v_p }]; #IO_L3P_T0_DQS_AD1P_15 Sch=ck_an_p[1]
-#set_property -dict { PACKAGE_PIN A15   IOSTANDARD LVCMOS33 } [get_ports { Vaux1_v_n }]; #IO_L3N_T0_DQS_AD1N_15 Sch=ck_an_n[1]
-#set_property -dict { PACKAGE_PIN E12   IOSTANDARD LVCMOS33 } [get_ports { Vaux2_v_p }]; #IO_L5P_T0_AD9P_15 Sch=ck_an_p[2]
-#set_property -dict { PACKAGE_PIN D12   IOSTANDARD LVCMOS33 } [get_ports { Vaux2_v_n }]; #IO_L5N_T0_AD9N_15 Sch=ck_an_n[2]
-#set_property -dict { PACKAGE_PIN B17   IOSTANDARD LVCMOS33 } [get_ports { Vaux10_v_p }]; #IO_L7P_T1_AD2P_15 Sch=ck_an_p[3]
-#set_property -dict { PACKAGE_PIN A17   IOSTANDARD LVCMOS33 } [get_ports { Vaux10_v_n }]; #IO_L7N_T1_AD2N_15 Sch=ck_an_n[3]
-#set_property -dict { PACKAGE_PIN C17   IOSTANDARD LVCMOS33 } [get_ports { Vaux3_v_p }]; #IO_L8P_T1_AD10P_15 Sch=ck_an_p[4]
-#set_property -dict { PACKAGE_PIN B18   IOSTANDARD LVCMOS33 } [get_ports { Vaux3_v_n }]; #IO_L8N_T1_AD10N_15 Sch=ck_an_n[4]
-#set_property -dict { PACKAGE_PIN E16   IOSTANDARD LVCMOS33 } [get_ports { Vaux4_v_p }]; #IO_L10P_T1_AD11P_15 Sch=ck_an_p[5]
-#set_property -dict { PACKAGE_PIN E17   IOSTANDARD LVCMOS33 } [get_ports { Vaux4_v_n }]; #IO_L10N_T1_AD11N_15 Sch=ck_an_n[5]
+#set_property -dict { PACKAGE_PIN B13   IOSTANDARD LVCMOS33 } [get_ports { vauxp0 }]; #IO_L1P_T0_AD0P_15 Sch=ck_an_p[0]
+#set_property -dict { PACKAGE_PIN A13   IOSTANDARD LVCMOS33 } [get_ports { vauxn0 }]; #IO_L1N_T0_AD0N_15 Sch=ck_an_n[0]
+#set_property -dict { PACKAGE_PIN B15   IOSTANDARD LVCMOS33 } [get_ports { vauxp1 }]; #IO_L3P_T0_DQS_AD1P_15 Sch=ck_an_p[1]
+#set_property -dict { PACKAGE_PIN A15   IOSTANDARD LVCMOS33 } [get_ports { vauxn1 }]; #IO_L3N_T0_DQS_AD1N_15 Sch=ck_an_n[1]
+#set_property -dict { PACKAGE_PIN E12   IOSTANDARD LVCMOS33 } [get_ports { vauxp2 }]; #IO_L5P_T0_AD9P_15 Sch=ck_an_p[2]
+#set_property -dict { PACKAGE_PIN D12   IOSTANDARD LVCMOS33 } [get_ports { vauxn2 }]; #IO_L5N_T0_AD9N_15 Sch=ck_an_n[2]
+#set_property -dict { PACKAGE_PIN B17   IOSTANDARD LVCMOS33 } [get_ports { vauxp10 }]; #IO_L7P_T1_AD2P_15 Sch=ck_an_p[3]
+#set_property -dict { PACKAGE_PIN A17   IOSTANDARD LVCMOS33 } [get_ports { vauxn10 }]; #IO_L7N_T1_AD2N_15 Sch=ck_an_n[3]
+#set_property -dict { PACKAGE_PIN C17   IOSTANDARD LVCMOS33 } [get_ports { vauxp3 }]; #IO_L8P_T1_AD10P_15 Sch=ck_an_p[4]
+#set_property -dict { PACKAGE_PIN B18   IOSTANDARD LVCMOS33 } [get_ports { vauxn3 }]; #IO_L8N_T1_AD10N_15 Sch=ck_an_n[4]
+#set_property -dict { PACKAGE_PIN E16   IOSTANDARD LVCMOS33 } [get_ports { vauxp4 }]; #IO_L10P_T1_AD11P_15 Sch=ck_an_p[5]
+#set_property -dict { PACKAGE_PIN E17   IOSTANDARD LVCMOS33 } [get_ports { vauxn4 }]; #IO_L10N_T1_AD11N_15 Sch=ck_an_n[5]
+
 
 ## Dedicated Analog Inputs
-#set_property -dict { PACKAGE_PIN J10   } [get_ports { Vp_Vn_v_p }]; #IO_L1P_T0_AD4P_35 Sch=v_p
-#set_property -dict { PACKAGE_PIN K9    } [get_ports { Vp_Vn_v_n }]; #IO_L1N_T0_AD4N_35 Sch=v_n
+#set_property -dict { PACKAGE_PIN J10   } [get_ports { vp_in }]; #IO_L1P_T0_AD4P_35 Sch=v_p
+#set_property -dict { PACKAGE_PIN K9    } [get_ports { vn_in }]; #IO_L1N_T0_AD4N_35 Sch=v_n
 
 
 ## ChipKit Digital I/O Low
@@ -137,13 +138,24 @@
 
 
 ## ChipKit Digital I/O On Inner Analog Header
-## NOTE: These pins will need to be connected to the XADC core when used as differential analog inputs (Chipkit analog pins A6-A11)
+## NOTE: These constraints should be used when using the analog header signals A20-A23 as digital I/O (Chipkit digital pins 20-23)
+## NOTE: Do not use these constraints with the vaux(p/n)(3/8) constraints below, as they constrain the same pins
 #set_property -dict { PACKAGE_PIN B14   IOSTANDARD LVCMOS33 } [get_ports { ck_io[20] }]; #IO_L2P_T0_AD8P_15 Sch=ad_p[8]
 #set_property -dict { PACKAGE_PIN A14   IOSTANDARD LVCMOS33 } [get_ports { ck_io[21] }]; #IO_L2N_T0_AD8N_15 Sch=ad_n[8]
 #set_property -dict { PACKAGE_PIN D16   IOSTANDARD LVCMOS33 } [get_ports { ck_io[22] }]; #IO_L9P_T1_DQS_AD3P_15 Sch=ad_p[3]
 #set_property -dict { PACKAGE_PIN D17   IOSTANDARD LVCMOS33 } [get_ports { ck_io[23] }]; #IO_L9N_T1_DQS_AD3N_15 Sch=ad_n[3]
-#set_property -dict { PACKAGE_PIN D14   IOSTANDARD LVCMOS33 } [get_ports { ck_io[24] }]; #IO_L12P_T1_MRCC_15 Sch=ck_a10_r
-#set_property -dict { PACKAGE_PIN D15   IOSTANDARD LVCMOS33 } [get_ports { ck_io[25] }]; #IO_L12N_T1_MRCC_15 Sch=ck_a11_r
+
+
+## ChipKit Differential Analog Inputs On Inner Analog Header
+## NOTE: These constraints should be used when using the analog header signals A20-A23 as analog inputs (Chipkit digital pins 20-23)
+## NOTE: These pins will need to be connected to the XADC core when used as differential analog inputs (Chipkit analog pins A6-A11)
+## NOTE: Do not use these constraints with the ck_io[25:20] constraints above, as they constrain the same pins
+#set_property -dict { PACKAGE_PIN B14   IOSTANDARD LVCMOS33 } [get_ports { vauxp8 }]; #IO_L2P_T0_AD8P_15 Sch=ad_p[8]
+#set_property -dict { PACKAGE_PIN A14   IOSTANDARD LVCMOS33 } [get_ports { vauxn8 }]; #IO_L2N_T0_AD8N_15 Sch=ad_n[8]
+#set_property -dict { PACKAGE_PIN D16   IOSTANDARD LVCMOS33 } [get_ports { vauxp11 }]; #IO_L9P_T1_DQS_AD3P_15 Sch=ad_p[3]
+#set_property -dict { PACKAGE_PIN D17   IOSTANDARD LVCMOS33 } [get_ports { vauxn11 }]; #IO_L9N_T1_DQS_AD3N_15 Sch=ad_n[3]
+#set_property -dict { PACKAGE_PIN D14   IOSTANDARD LVCMOS33 } [get_ports { vauxp5 }]; #IO_L12P_T1_MRCC_15 Sch=ck_a10_r
+#set_property -dict { PACKAGE_PIN D15   IOSTANDARD LVCMOS33 } [get_ports { vauxn5 }]; #IO_L12N_T1_MRCC_15 Sch=ck_a11_r
 
 
 ## ChipKit Digital I/O High
