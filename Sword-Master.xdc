@@ -140,7 +140,7 @@
 #set_property -dict { PACKAGE_PIN R15   } [get_ports { v_p }]; #VP_0 Sch=v_p
 #set_property -dict { PACKAGE_PIN T14   } [get_ports { v_n }]; #VN_0 Sch=v_n
 
-## ChipKit Outer Digital Header - Digital I/O
+## ChipKit Outer Digital Header
 #set_property -dict { PACKAGE_PIN N22   IOSTANDARD LVCMOS33 } [get_ports { ck_io0  }]; #IO_L20N_T3_A19_15 Sch=ck_io[0]
 #set_property -dict { PACKAGE_PIN N25   IOSTANDARD LVCMOS33 } [get_ports { ck_io1  }]; #IO_L18P_T2_A24_15 Sch=ck_io[1]
 #set_property -dict { PACKAGE_PIN P22   IOSTANDARD LVCMOS33 } [get_ports { ck_io2  }]; #IO_L22N_T3_A16_15 Sch=ck_io[2]
@@ -154,52 +154,12 @@
 
 ## ChipKit SPI Header
 ## NOTE: The ChipKit SPI header ports can also be used as digital I/O and share FPGA pins with ck_io10-13
-#set_property -dict { PACKAGE_PIN L28   IOSTANDARD LVCMOS33 } [get_ports { ck_io10_ss }]; #IO_L14N_T2_SRCC_15 Sch=ck_io10_ss
+#set_property -dict { PACKAGE_PIN L28   IOSTANDARD LVCMOS33 } [get_ports { ck_io10_ss   }]; #IO_L14N_T2_SRCC_15 Sch=ck_io10_ss
 #set_property -dict { PACKAGE_PIN M27   IOSTANDARD LVCMOS33 } [get_ports { ck_io11_mosi }]; #IO_L16N_T2_A27_15 Sch=ck_io11_mosi
 #set_property -dict { PACKAGE_PIN N29   IOSTANDARD LVCMOS33 } [get_ports { ck_io12_miso }]; #IO_L17P_T2_A26_15 Sch=ck_io12_miso
-#set_property -dict { PACKAGE_PIN N30   IOSTANDARD LVCMOS33 } [get_ports { ck_io13_sck }]; #IO_L17N_T2_A25_15 Sch=ck_io13_sck
+#set_property -dict { PACKAGE_PIN N30   IOSTANDARD LVCMOS33 } [get_ports { ck_io13_sck  }]; #IO_L17N_T2_A25_15 Sch=ck_io13_sck
 
-## ChipKit Outer Analog Header - Single Ended Analog Inputs
-## NOTE: These ports can be used as single ended analog inputs with voltages from 0-3.3V (Chipkit Analog pins A0-A5) or as digital I/O.
-##       These constraints should be used with the XADC core when using these ports as analog inputs.
-#set_property -dict { PACKAGE_PIN J29   IOSTANDARD LVCMOS33 } [get_ports { vaux10_p }]; #IO_L7P_T1_AD10P_15 Sch=ck_an_p[0] ChipKit pin=A0
-#set_property -dict { PACKAGE_PIN H29   IOSTANDARD LVCMOS33 } [get_ports { vaux10_n }]; #IO_L7N_T1_AD10N_15 Sch=ck_an_n[0] ChipKit pin=A0
-#set_property -dict { PACKAGE_PIN L22   IOSTANDARD LVCMOS33 } [get_ports { vaux8_p }]; #IO_L2P_T0_AD8P_15 Sch=ck_an_p[1] ChipKit pin=A1
-#set_property -dict { PACKAGE_PIN L23   IOSTANDARD LVCMOS33 } [get_ports { vaux8_n }]; #IO_L2N_T0_AD8N_15 Sch=ck_an_n[1] ChipKit pin=A1
-#set_property -dict { PACKAGE_PIN J23   IOSTANDARD LVCMOS33 } [get_ports { vaux0_p }]; #IO_L1P_T0_AD0P_15 Sch=ck_an_p[2] ChipKit pin=A2
-#set_property -dict { PACKAGE_PIN J24   IOSTANDARD LVCMOS33 } [get_ports { vaux0_n }]; #IO_L1N_T0_AD0N_15 Sch=ck_an_n[2] ChipKit pin=A2
-#set_property -dict { PACKAGE_PIN K23   IOSTANDARD LVCMOS33 } [get_ports { vaux1_p }]; #IO_L3P_T0_DQS_AD1P_15 Sch=ck_an_p[3] ChipKit pin=A3
-#set_property -dict { PACKAGE_PIN K24   IOSTANDARD LVCMOS33 } [get_ports { vaux1_n }]; #IO_L3N_T0_DQS_AD1N_15 Sch=ck_an_n[3] ChipKit pin=A3
-#set_property -dict { PACKAGE_PIN L21   IOSTANDARD LVCMOS33 } [get_ports { vaux9_p }]; #IO_L4P_T0_AD9P_15 Sch=ck_an_p[4] ChipKit pin=A4
-#set_property -dict { PACKAGE_PIN K21   IOSTANDARD LVCMOS33 } [get_ports { vaux9_n }]; #IO_L4N_T0_AD9N_15 Sch=ck_an_n[4] ChipKit pin=A4
-#set_property -dict { PACKAGE_PIN J21   IOSTANDARD LVCMOS33 } [get_ports { vaux2_p }]; #IO_L5P_T0_AD2P_15 Sch=ck_an_p[5] ChipKit pin=A5
-#set_property -dict { PACKAGE_PIN J22   IOSTANDARD LVCMOS33 } [get_ports { vaux2_n }]; #IO_L5N_T0_AD2N_15 Sch=ck_an_n[5] ChipKit pin=A5
-## NOTE: the following constraints should be used when using the outer analog header ports as digital I/O
-#set_property -dict { PACKAGE_PIN B23   IOSTANDARD LVCMOS33 } [get_ports { ck_a0 }]; #IO_L1P_T0_16 Sch=ck_a[0]
-#set_property -dict { PACKAGE_PIN A23   IOSTANDARD LVCMOS33 } [get_ports { ck_a1 }]; #IO_L1N_T0_16 Sch=ck_a[1]
-#set_property -dict { PACKAGE_PIN E23   IOSTANDARD LVCMOS33 } [get_ports { ck_a2 }]; #IO_L2P_T0_16 Sch=ck_a[2]
-#set_property -dict { PACKAGE_PIN D23   IOSTANDARD LVCMOS33 } [get_ports { ck_a3 }]; #IO_L2N_T0_16 Sch=ck_a[3]
-#set_property -dict { PACKAGE_PIN F25   IOSTANDARD LVCMOS33 } [get_ports { ck_a4 }]; #IO_L3P_T0_DQS_16 Sch=ck_a[4]
-#set_property -dict { PACKAGE_PIN E25   IOSTANDARD LVCMOS33 } [get_ports { ck_a5 }]; #IO_L3N_T0_DQS_16 Sch=ck_a[5]
-
-## ChipKit Inner Analog Header - Differential Analog Inputs
-## NOTE: These ports can be used as differential analog inputs with voltages from 0-1.0V (ChipKit Analog pins A6-A11) or as digital I/O.
-##       These constraints should be used with the XADC core when using these ports as analog inputs.
-#set_property -dict { PACKAGE_PIN J27   IOSTANDARD LVDS     } [get_ports { vaux3_p }]; #IO_L8P_T1_AD3P_15 Sch=fpga_ad_p[3] ChipKit pin=A6
-#set_property -dict { PACKAGE_PIN J28   IOSTANDARD LVDS     } [get_ports { vaux3_n }]; #IO_L8N_T1_AD3N_15 Sch=fpga_ad_n[3] ChipKit pin=A7
-#set_property -dict { PACKAGE_PIN L30   IOSTANDARD LVDS     } [get_ports { vaux11_p }]; #IO_L9P_T1_DQS_AD11P_15 Sch=fpga_ad_p[11] ChipKit pin=A8
-#set_property -dict { PACKAGE_PIN K30   IOSTANDARD LVDS     } [get_ports { vaux11_n }]; #IO_L9N_T1_DQS_AD11N_15 Sch=fpga_ad_n[11] ChipKit pin=A9
-#set_property -dict { PACKAGE_PIN K26   IOSTANDARD LVDS     } [get_ports { vaux4_p }]; #IO_L10P_T1_AD4P_15 Sch=fpga_ad_p[4] ChipKit pin=A10
-#set_property -dict { PACKAGE_PIN J26   IOSTANDARD LVDS     } [get_ports { vaux4_n }]; #IO_L10N_T1_AD4N_15 Sch=fpga_ad_n[4] ChipKit pin=A11
-## NOTE: the following constraints should be used when using the inner analog header ports as digital I/O
-#set_property -dict { PACKAGE_PIN J28   IOSTANDARD LVCMOS33 } [get_ports { ck_a6  }]; #IO_L8N_T1_AD3N_15 Sch=fpga_ad_n[3]
-#set_property -dict { PACKAGE_PIN J27   IOSTANDARD LVCMOS33 } [get_ports { ck_a7  }]; #IO_L8P_T1_AD3P_15 Sch=fpga_ad_p[3]
-#set_property -dict { PACKAGE_PIN K30   IOSTANDARD LVCMOS33 } [get_ports { ck_a8  }]; #IO_L9N_T1_DQS_AD11N_15 Sch=fpga_ad_n[11]
-#set_property -dict { PACKAGE_PIN L30   IOSTANDARD LVCMOS33 } [get_ports { ck_a9  }]; #IO_L9P_T1_DQS_AD11P_15 Sch=fpga_ad_p[11]
-#set_property -dict { PACKAGE_PIN J26   IOSTANDARD LVCMOS33 } [get_ports { ck_a10 }]; #IO_L10N_T1_AD4N_15 Sch=fpga_ad_n[4]
-#set_property -dict { PACKAGE_PIN K26   IOSTANDARD LVCMOS33 } [get_ports { ck_a11 }]; #IO_L10P_T1_AD4P_15 Sch=fpga_ad_p[4]
-
-## ChipKit Inner Digital Header - Digital I/O
+## ChipKit Inner Digital Header
 #set_property -dict { PACKAGE_PIN M20   IOSTANDARD LVCMOS33 } [get_ports { ck_io26 }]; #IO_L6P_T0_15 Sch=ck_io[26]
 #set_property -dict { PACKAGE_PIN N24   IOSTANDARD LVCMOS33 } [get_ports { ck_io27 }]; #IO_L21N_T3_DQS_A18_15 Sch=ck_io[27]
 #set_property -dict { PACKAGE_PIN P23   IOSTANDARD LVCMOS33 } [get_ports { ck_io28 }]; #IO_L21P_T3_DQS_15 Sch=ck_io[28]
@@ -216,6 +176,50 @@
 #set_property -dict { PACKAGE_PIN M23   IOSTANDARD LVCMOS33 } [get_ports { ck_io39 }]; #IO_L24N_T3_RS0_15 Sch=ck_io[39]
 #set_property -dict { PACKAGE_PIN N27   IOSTANDARD LVCMOS33 } [get_ports { ck_io40 }]; #IO_L16P_T2_A28_15 Sch=ck_io[40]
 #set_property -dict { PACKAGE_PIN N26   IOSTANDARD LVCMOS33 } [get_ports { ck_io41 }]; #IO_L18N_T2_A23_15 Sch=ck_io[41]
+
+## ChipKit Outer Analog Header - as Single-Ended Analog Inputs
+## NOTE: These ports can be used as single-ended analog inputs with voltages from 0-3.3V (ChipKit analog pins A0-A5) or as digital I/O.
+## WARNING: Do not use both sets of constraints at the same time!
+## NOTE: The following constraints should be used with the XADC IP core when using these ports as analog inputs.
+#set_property -dict { PACKAGE_PIN J29   IOSTANDARD LVCMOS33 } [get_ports { vaux10_p }]; #IO_L7P_T1_AD10P_15 Sch=ck_an_p[0] ChipKit pin=A0
+#set_property -dict { PACKAGE_PIN H29   IOSTANDARD LVCMOS33 } [get_ports { vaux10_n }]; #IO_L7N_T1_AD10N_15 Sch=ck_an_n[0] ChipKit pin=A0
+#set_property -dict { PACKAGE_PIN L22   IOSTANDARD LVCMOS33 } [get_ports { vaux8_p }]; #IO_L2P_T0_AD8P_15 Sch=ck_an_p[1] ChipKit pin=A1
+#set_property -dict { PACKAGE_PIN L23   IOSTANDARD LVCMOS33 } [get_ports { vaux8_n }]; #IO_L2N_T0_AD8N_15 Sch=ck_an_n[1] ChipKit pin=A1
+#set_property -dict { PACKAGE_PIN J23   IOSTANDARD LVCMOS33 } [get_ports { vaux0_p }]; #IO_L1P_T0_AD0P_15 Sch=ck_an_p[2] ChipKit pin=A2
+#set_property -dict { PACKAGE_PIN J24   IOSTANDARD LVCMOS33 } [get_ports { vaux0_n }]; #IO_L1N_T0_AD0N_15 Sch=ck_an_n[2] ChipKit pin=A2
+#set_property -dict { PACKAGE_PIN K23   IOSTANDARD LVCMOS33 } [get_ports { vaux1_p }]; #IO_L3P_T0_DQS_AD1P_15 Sch=ck_an_p[3] ChipKit pin=A3
+#set_property -dict { PACKAGE_PIN K24   IOSTANDARD LVCMOS33 } [get_ports { vaux1_n }]; #IO_L3N_T0_DQS_AD1N_15 Sch=ck_an_n[3] ChipKit pin=A3
+#set_property -dict { PACKAGE_PIN L21   IOSTANDARD LVCMOS33 } [get_ports { vaux9_p }]; #IO_L4P_T0_AD9P_15 Sch=ck_an_p[4] ChipKit pin=A4
+#set_property -dict { PACKAGE_PIN K21   IOSTANDARD LVCMOS33 } [get_ports { vaux9_n }]; #IO_L4N_T0_AD9N_15 Sch=ck_an_n[4] ChipKit pin=A4
+#set_property -dict { PACKAGE_PIN J21   IOSTANDARD LVCMOS33 } [get_ports { vaux2_p }]; #IO_L5P_T0_AD2P_15 Sch=ck_an_p[5] ChipKit pin=A5
+#set_property -dict { PACKAGE_PIN J22   IOSTANDARD LVCMOS33 } [get_ports { vaux2_n }]; #IO_L5N_T0_AD2N_15 Sch=ck_an_n[5] ChipKit pin=A5
+## ChipKit Outer Analog Header - as Digital I/O
+## NOTE: The following constraints should be used when using these ports as digital I/O.
+#set_property -dict { PACKAGE_PIN B23   IOSTANDARD LVCMOS33 } [get_ports { ck_a0 }]; #IO_L1P_T0_16 Sch=ck_a[0]
+#set_property -dict { PACKAGE_PIN A23   IOSTANDARD LVCMOS33 } [get_ports { ck_a1 }]; #IO_L1N_T0_16 Sch=ck_a[1]
+#set_property -dict { PACKAGE_PIN E23   IOSTANDARD LVCMOS33 } [get_ports { ck_a2 }]; #IO_L2P_T0_16 Sch=ck_a[2]
+#set_property -dict { PACKAGE_PIN D23   IOSTANDARD LVCMOS33 } [get_ports { ck_a3 }]; #IO_L2N_T0_16 Sch=ck_a[3]
+#set_property -dict { PACKAGE_PIN F25   IOSTANDARD LVCMOS33 } [get_ports { ck_a4 }]; #IO_L3P_T0_DQS_16 Sch=ck_a[4]
+#set_property -dict { PACKAGE_PIN E25   IOSTANDARD LVCMOS33 } [get_ports { ck_a5 }]; #IO_L3N_T0_DQS_16 Sch=ck_a[5]
+
+## ChipKit Inner Analog Header - as Differential Analog Inputs
+## NOTE: These ports can be used as differential analog inputs with voltages from 0-1.0V (ChipKit analog pins A6-A11) or as digital I/O.
+## WARNING: Do not use both sets of constraints at the same time!
+## NOTE: The following constraints should be used with the XADC core when using these ports as analog inputs.
+#set_property -dict { PACKAGE_PIN J27   IOSTANDARD LVCMOS33 } [get_ports { vaux3_p }]; #IO_L8P_T1_AD3P_15 Sch=fpga_ad_p[3] 		  ChipKit pin=A6
+#set_property -dict { PACKAGE_PIN J28   IOSTANDARD LVCMOS33 } [get_ports { vaux3_n }]; #IO_L8N_T1_AD3N_15 Sch=fpga_ad_n[3] 		  ChipKit pin=A7
+#set_property -dict { PACKAGE_PIN L30   IOSTANDARD LVCMOS33 } [get_ports { vaux11_p }]; #IO_L9P_T1_DQS_AD11P_15 Sch=fpga_ad_p[11] ChipKit pin=A8
+#set_property -dict { PACKAGE_PIN K30   IOSTANDARD LVCMOS33 } [get_ports { vaux11_n }]; #IO_L9N_T1_DQS_AD11N_15 Sch=fpga_ad_n[11] ChipKit pin=A9
+#set_property -dict { PACKAGE_PIN K26   IOSTANDARD LVCMOS33 } [get_ports { vaux4_p }]; #IO_L10P_T1_AD4P_15 Sch=fpga_ad_p[4] 	  ChipKit pin=A10
+#set_property -dict { PACKAGE_PIN J26   IOSTANDARD LVCMOS33 } [get_ports { vaux4_n }]; #IO_L10N_T1_AD4N_15 Sch=fpga_ad_n[4] 	  ChipKit pin=A11
+## ChipKit Inner Analog Header - as Digital I/O
+## NOTE: The following constraints should be used when using the inner analog header ports as digital I/O.
+#set_property -dict { PACKAGE_PIN J28   IOSTANDARD LVCMOS33 } [get_ports { ck_a6  }]; #IO_L8N_T1_AD3N_15 Sch=fpga_ad_n[3]
+#set_property -dict { PACKAGE_PIN J27   IOSTANDARD LVCMOS33 } [get_ports { ck_a7  }]; #IO_L8P_T1_AD3P_15 Sch=fpga_ad_p[3]
+#set_property -dict { PACKAGE_PIN K30   IOSTANDARD LVCMOS33 } [get_ports { ck_a8  }]; #IO_L9N_T1_DQS_AD11N_15 Sch=fpga_ad_n[11]
+#set_property -dict { PACKAGE_PIN L30   IOSTANDARD LVCMOS33 } [get_ports { ck_a9  }]; #IO_L9P_T1_DQS_AD11P_15 Sch=fpga_ad_p[11]
+#set_property -dict { PACKAGE_PIN J26   IOSTANDARD LVCMOS33 } [get_ports { ck_a10 }]; #IO_L10N_T1_AD4N_15 Sch=fpga_ad_n[4]
+#set_property -dict { PACKAGE_PIN K26   IOSTANDARD LVCMOS33 } [get_ports { ck_a11 }]; #IO_L10P_T1_AD4P_15 Sch=fpga_ad_p[4]
 
 ## ChipKit I2C
 #set_property -dict { PACKAGE_PIN K25   IOSTANDARD LVCMOS33 } [get_ports { ck_scl }]; #IO_L12N_T1_MRCC_AD5N_15 Sch=ck_scl
