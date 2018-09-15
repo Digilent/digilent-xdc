@@ -77,7 +77,6 @@
 #set_property PACKAGE_PIN L1 [get_ports {led[15]}]
 	#set_property IOSTANDARD LVCMOS33 [get_ports {led[15]}]
 
-
 ##7 segment display
 #set_property PACKAGE_PIN W7 [get_ports {seg[0]}]
 	#set_property IOSTANDARD LVCMOS33 [get_ports {seg[0]}]
