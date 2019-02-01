@@ -1,4 +1,4 @@
-## This file is a general .xdc for the Cora Z7-07S Rev. B
+## This file is a general .xdc for the Cora Z7-10 Rev. B
 ## To use it in a project:
 ## - uncomment the lines corresponding to used pins
 ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
