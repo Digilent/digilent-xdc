@@ -232,7 +232,7 @@
 #set_property PACKAGE_PIN G17 [get_ports {OTG_RESETN}];  # "OTG-RESETN"
 
 ## ----------------------------------------------------------------------------
-## User DIP Switches - Bank 35
+## User DIP Switches - Bank 34 and 35
 ## ---------------------------------------------------------------------------- 
 #set_property PACKAGE_PIN F22 [get_ports {SW0}];  # "SW0"
 #set_property PACKAGE_PIN G22 [get_ports {SW1}];  # "SW1"
